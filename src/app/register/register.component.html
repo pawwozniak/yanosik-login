@@ -1,0 +1,82 @@
+<div class="form-container">
+  <span class="arrow"><a routerLink="/">&#10140;</a></span>
+  <picture class="logo">
+    <source
+      media="(min-width:576px)"
+      srcset="..\assets\yanosik-logo-desktop.png"
+      alt="Yanosik Logo Desktop"
+    />
+    <img
+      src="..\assets\yanosik-logo-mobile.png"
+      alt="Yanosik Logo Mobile"
+      width="500px"
+    />
+  </picture>
+  <h1>Rejestracja</h1>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-control-container">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="email@domena.com"
+        autocomplete="email"
+      />
+    </div>
+    <div formGroupName="passwordsGroup">
+      <div class="form-control-container">
+        <label for="password">Hasło (min. 6 znaków):</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          autocomplete="new-password"
+          placeholder="Hasło"
+        />
+      </div>
+      <div class="form-control-container">
+        <label for="repeat-password">Powtórz hasło:</label>
+        <input
+          type="password"
+          id="repeat-password"
+          formControlName="repeatPassword"
+          autocomplete="new-password"
+          placeholder="Hasło"
+        />
+      </div>
+    </div>
+    <div class="checkbox">
+      <input
+        type="checkbox"
+        id="accept-all"
+        formControlName="acceptAll"
+        (click)="changeAcceptAll()"
+      />
+      <label for="accept-all">Akceptuję wszystkie zgody</label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" id="terms-of-use" formControlName="termsOfUse" />
+      <label for="terms-of-use">Zapoznałem/am się z Regulaminem*</label>
+    </div>
+    <div class="checkbox">
+      <input
+        type="checkbox"
+        id="privacy-policy"
+        formControlName="privacyPolicy"
+      />
+      <label for="privacy-policy"
+        >Zapoznałem/am się z Polityką Prywatności*</label
+      >
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" id="marketing" formControlName="marketing" />
+      <label for="marketing"
+        >Wyrażam zgodę na przetwarzanie moich danych w celach
+        marketingowych</label
+      >
+    </div>
+    <p class="obligatory">*zgoda obowiązkowa</p>
+    <button class="confirm" type="submit">Zarejestruj</button>
+  </form>
+</div>

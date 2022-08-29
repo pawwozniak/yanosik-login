@@ -1,0 +1,48 @@
+<div class="form-container">
+  <picture>
+    <source
+      media="(min-width:576px)"
+      srcset="..\assets\yanosik-logo-desktop.png"
+      alt="Yanosik Logo Desktop"
+    />
+    <img
+      src="..\assets\yanosik-logo-mobile.png"
+      alt="Yanosik Logo Mobile"
+      width="500px"
+    />
+  </picture>
+  <h1>Logowanie</h1>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-control-container">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        ngModel
+        name="email"
+        placeholder="email@domena.com"
+        autocomplete="email"
+        required
+        email
+      />
+    </div>
+    <div class="form-control-container">
+      <label for="password">Hasło:</label>
+      <input
+        type="password"
+        id="password"
+        ngModel
+        name="password"
+        placeholder="Hasło"
+        minlength="6"
+        autocomplete="new-password"
+        required
+      />
+    </div>
+    <button class="confirm login-button" type="submit">Zaloguj</button>
+  </form>
+  <span class="new-account">
+    Nie masz konta?
+    <a routerLink="/register">Zarejestruj się</a>
+  </span>
+</div>

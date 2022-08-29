@@ -1,0 +1,85 @@
+$background: #989898;
+$yanosik-red: #ed3331;
+$white: #fff;
+$black: #000;
+
+@mixin for-mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: $background;
+  border-radius: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: relative;
+  padding: 20px 0;
+  margin: 20px 10px;
+  max-width: 500px;
+
+  picture {
+    margin: 0 auto;
+
+    img {
+      @include for-mobile {
+        width: 350px;
+      }
+    }
+  }
+
+  a {
+    transition: 0.3s;
+    color: $black;
+
+    &:hover {
+      color: $yanosik-red;
+      cursor: pointer;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-control-container {
+    margin: 10px 50px;
+    display: flex;
+    flex-direction: column;
+
+    input {
+      height: 20px;
+      padding: 8px;
+      border-radius: 4px;
+    }
+  }
+
+  h1 {
+    color: $yanosik-red;
+    margin: 0 auto;
+  }
+
+  .confirm {
+    border: solid 1px $yanosik-red;
+    border-radius: 25px;
+    color: $yanosik-red;
+    font-weight: bold;
+    background-color: $white;
+    margin: 0 auto;
+    padding: 15px 40px;
+    transition: 0.3s;
+
+    &.login-button {
+      margin: 20px auto;
+    }
+
+    &:hover {
+      color: $white;
+      background-color: $yanosik-red;
+      cursor: pointer;
+    }
+  }
+}

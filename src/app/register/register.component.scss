@@ -1,0 +1,22 @@
+.arrow {
+  transform: rotate(180deg);
+  font-size: 30px;
+  position: absolute;
+  left: 20px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.checkbox {
+  font-size: 14px;
+  display: flex;
+  margin: 5px 50px;
+}
+
+.obligatory {
+  font-size: 12px;
+  align-self: flex-end;
+  margin-right: 20px;
+}
